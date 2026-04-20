@@ -1069,7 +1069,7 @@ async function handleUpload(e){
 SADECE JSON döndür:
 {"durum":"saglikli"|"hasta"|"belirsiz","hastalik":"ad","aciklama":"...","oneriler":["..."],"guven":85}`,
           messages:[{role:'user',content:[
-            {type:'image',source:{type:'base64',media_type:'image/jpeg',data:b64}},
+            {type:'image',source:{type:'base64',media_type:file.type,data:b64}},
             {type:'text',text:'Analiz et, JSON döndür.'}
           ]}]
         })
