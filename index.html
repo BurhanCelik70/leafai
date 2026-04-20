@@ -1054,9 +1054,9 @@ async function handleUpload(e){
     pb.style.animation='none'; pb.offsetHeight; pb.style.animation='progFill 3s ease-in-out forwards';
 
     try{
-      const resp=await fetch('/api/analyze',{
+      const resp=await fetch('https://api.anthropic.com/v1/messages',{
         method:'POST',
-        headers:{'Content-Type':'application/json','x-api-key':'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','anthropic-version':'2023-06-01','anthropic-dangerous-allow-browser':'true'},
+        headers:{'Content-Type':'application/json','x-api-key':'BURAYA_KEY_YAZ','anthropic-version':'2023-06-01','anthropic-dangerous-allow-browser':'true'},
         body:JSON.stringify({
           model:'claude-sonnet-4-20250514',max_tokens:1000,
           system:`Sen LeafAI yapay zeka teşhis motorusun. Yüklenen yaprak/bitki görüntüsünü analiz et:
@@ -1069,7 +1069,7 @@ async function handleUpload(e){
 SADECE JSON döndür:
 {"durum":"saglikli"|"hasta"|"belirsiz","hastalik":"ad","aciklama":"...","oneriler":["..."],"guven":85}`,
           messages:[{role:'user',content:[
-            {type:'image',source:{type:'base64',media_type:file.type,data:b64}},
+            {type:'image',source:{type:'base64',media_type:'image/jpeg',data:b64}},
             {type:'text',text:'Analiz et, JSON döndür.'}
           ]}]
         })
