@@ -1054,7 +1054,7 @@ async function handleUpload(e){
     pb.style.animation='none'; pb.offsetHeight; pb.style.animation='progFill 3s ease-in-out forwards';
 
     try{
-      const resp=await fetch('https://api.anthropic.com/v1/messages',{
+      const resp=await fetch('/api/analyze',{
         method:'POST',
         headers:{'Content-Type':'application/json','x-api-key':'BURAYA_KEY_YAZ','anthropic-version':'2023-06-01','anthropic-dangerous-allow-browser':'true'},
         body:JSON.stringify({
